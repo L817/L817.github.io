@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8" >
 	<title>L</title>
-	<!-- <meta http-equiv="refresh" content="20"> -->
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./css/reset.css">
@@ -14,12 +13,12 @@
 		<!-- 菜单 -->
 		<ul class="menu_set">
 			<li>
-				<!-- <a href="#index1" class="menu-home">Home</a> -->
-				Home
+				<a href="#home" class="menu-home">Home</a>
+				<!-- Home -->
 			</li>
 			<li>
-				<!-- <a href="#Project" class="menu-project">Project</a> -->
-				Project
+				<a href="#Project" class="menu-project">Project</a>
+				<!-- Project -->
 			</li>
 		</ul>
 	</div>
@@ -48,8 +47,8 @@
 			</div>
 			<div id="box3"></div>
 			<div id="box4">
-				<!-- <a href="#project"> </a> -->
-				<h3>project</h3>
+				<a href="#Project"> </a>
+				<h3>Project</h3>
 			</div>
 			<div id="box5"></div>
 			<div id="box6"></div>
@@ -63,21 +62,16 @@
 
 <script src="./js/jquery.js"></script>
 <script>
-// window.location.reload(); 
-// $('#container div[id^=box]').css("animationName","run2");
+
 
 
 $("#box4").on("click",function (){
 	$('#container div[id^=box]').css("animationName","run");
 	$('#container div[id^=project]').css("animationName","run4");
-	// $('#container div[id^=box]').css("display","none");
-	// $('#container div[id^=box]').fadeOut(1000);
 })
 $(".menu_set li:nth-child(1)").on("click",function (){
 	$('#container div[id^=box]').css("animationName","run2");
 	$('#container div[id^=project]').css("animationName","run3");
-	// $('#container div[id^=box]').css("display","block");
-	// $('#container div[id^=box]').fadeIn(1000);
 	$("#content").animate({left:0},200);
 	flag=0;
 })
@@ -104,46 +98,39 @@ $(".nav-button").on("click",function (){
 
 
 
+jQuery(document).ready(function($) {
 
+  if (window.history && window.history.pushState) {
 
+    $(window).on('popstate', function() {
+      var hashLocation = location.hash;
+      var hashSplit = hashLocation.split("#!/");
+      var hashName = hashSplit[1];
 
-
-
-// window.history.back()//返回到上一页面
-
-
-
-
-
-
-
-// 浏览器返回  执行
-$(document).ready(function(e) { 
-    var counter = 0;
-    if (window.history && window.history.pushState) {
-         $(window).on('popstate', function () {
-            // window.history.pushState('forward', null,'#');
-            // window.history.forward(1);
-          	// alert("不可回退");
-          	// $('#container div[id^=box]').css("display","block");
+      if (hashName !== '') {
+        var hash = window.location.hash;
+        if (hash === '') {
+          	// alert('後退按鈕點擊');
           	$('#container div[id^=box]').css("animationName","run2");
-          	$('#container div[id^=project]').css("animationName","run3");
-          	// $('#container div[id^=box]').fadeIn(1000);
-        });
+     	  	$('#container div[id^=project]').css("animationName","run3");
+        }
+        if (hash === '#Project') {
+          	// alert('1');
+          	$('#container div[id^=box]').css("animationName","run ");
+     	  	$('#container div[id^=project]').css("animationName","run4");
+        }
+        if (hash === '#home') {
+          	// alert('2');
+          	$('#container div[id^=box]').css("animationName","run2");
+     	  	$('#container div[id^=project]').css("animationName","run3");
+        }
       }
-      window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
-      window.history.forward(1);
+    });
+
+    // window.history.pushState('forward', null, './#forward');
+  }
+
 });
-
-
-	// var app=angular.module('routing',['ngRoute']);
-	//   app.config(['$routeProvider',"$locationProvider",function ($routeProvider,$locationProvider) {
-	//     $locationProvider.hashPrefix('');
-	//     $routeProvider.when('/project',{
-	//         // template:"这个是首页"
-	//         templateUrl:"dier.html"
-	//       })
-	//   }])
 
 
 </script>

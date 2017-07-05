@@ -21,7 +21,7 @@ body{
     z-index: 101;
     margin-left:30px;
 }
-.menu_set li {
+.menu_set li a{
 	text-decoration: none;
     color: #fff;
     opacity: 0.7;
@@ -116,7 +116,7 @@ body{
     padding: 17px 35px;
     position: relative;
 }
-/* #box4 a {
+#box4 a {
 	position: absolute;
 	top:0;
 	left:0;
@@ -124,7 +124,7 @@ body{
 	height: 280px;
 	font-size: 26px;
     padding: 17px 35px;
-} */
+}
 #box5{
 	width:300px;
 	height: 280px;
