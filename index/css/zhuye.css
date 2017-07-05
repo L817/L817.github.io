@@ -1,0 +1,41 @@
+*{margin:0px;padding:0px;font-family:"微软雅黑";font-size:12px; text-decoration:none;list-style-type:none;}
+img{
+	width:1000px;
+	height: 600px;
+}
+#box{
+	width:100%;
+	height: 600px;
+	overflow: hidden;
+}
+#box .picture{
+	width:1000px;
+	margin:0 auto;	
+	position: relative;
+}
+#box .picture .leftt{
+	width:300px;
+	height: 600px;
+	background:rgba(0,0,0,0.5);
+	position: absolute;
+	top:0;
+	left:-300px;
+	z-index:33;
+}
+#box .picture .rightt{
+	width:300px;
+	height: 600px;
+	background:rgba(0,0,0,0.5);
+	position: absolute;
+	top:0;
+	right:-300px;
+	z-index:33;
+}
+#box .picture .scroll{
+	width:2000%;
+	height: 600px;
+	position: relative;
+}
+#box .picture .scroll img {
+	float:left;
+}

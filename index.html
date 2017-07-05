@@ -1,138 +1,151 @@
 <!doctype html>
-<html>
+<html ng-app='routing'>
 <head>
-	<meta charset="utf-8">
-	<title>CSS3跳频</title>
+	<meta charset="utf-8" >
+	<title>L</title>
+	<!-- <meta http-equiv="refresh" content="20"> -->
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-	<style>
-	@import "compass/css3";
-
-	@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
-
-
-	body{
-	  background: black;
-	}
-
-	svg{
-	  width: 600px;
-	  height: 120px;
-	  display: block;
-	  /* position: relative; */
-	  /* overflow: hidden;  */
-
-	  background: black;
-	  
-	  line-height:120px;
-	  text-align:center;
-	  top:0;
-	  left:0;
-	  right:0;
-	  bottom:0;
-	  margin:250px auto;
-	}
-
-
-	</style>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/xiangyingshi.css">
 </head>
-<body>
-	<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-     width="600px" height="100px" viewBox="0 0 600 100">
-	<style type="text/css">
+<body load=a>
+	<div class="menu">
+		<!-- 菜单 -->
+		<ul class="menu_set">
+			<li>
+				<!-- <a href="#index1" class="menu-home">Home</a> -->
+				Home
+			</li>
+			<li>
+				<!-- <a href="#Project" class="menu-project">Project</a> -->
+				Project
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div class="btn">
+			<div class="btn_1">
+				<div class="nav-button">
+					<span class="nav-bar"></span>
+					<span class="nav-bar"></span>
+					<span class="nav-bar"></span>
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<div id="box1">
+				<img src="./images/head.jpg" alt="">
+			</div>
+			<div id="box2">
+				<h2>
+					Hi I am L ,
+					<br>
+					<i>front-end engineer</i>
+					<br>
+					The beautiful page of fashion is my lifelong pursuit.
+				</h2>
+			</div>
+			<div id="box3"></div>
+			<div id="box4">
+				<!-- <a href="#project"> </a> -->
+				<h3>project</h3>
+			</div>
+			<div id="box5"></div>
+			<div id="box6"></div>
+			<div id="box7"></div>
+			<div id="box8"></div>
+			<div id="project1"></div>
+			<div id="project2"></div>
+		</div>
+		
+	</div>
 
-	<![CDATA[
+<script src="./js/jquery.js"></script>
+<script>
+// window.location.reload(); 
+// $('#container div[id^=box]').css("animationName","run2");
 
-	    text {
-	        filter: url(#filter);
-	        fill: white;
-	        font-family: 'Share Tech Mono', sans-serif;
-	        font-size: 100px;
-	        -webkit-font-smoothing: antialiased;
-	        -moz-osx-font-smoothing: grayscale;
-	            }
-	]]>
-	</style>
-    <defs>
 
-        <filter id="filter">
-            <feFlood flood-color="black" result="black" />
-            <feFlood flood-color="red" result="flood1" />
-            <feFlood flood-color="limegreen" result="flood2" />
-            <feOffset in="SourceGraphic" dx="3" dy="0" result="off1a"/>
-            <feOffset in="SourceGraphic" dx="2" dy="0" result="off1b"/>
-            <feOffset in="SourceGraphic" dx="-3" dy="0" result="off2a"/>
-            <feOffset in="SourceGraphic" dx="-2" dy="0" result="off2b"/>
-            <feComposite in="flood1" in2="off1a" operator="in"  result="comp1" />
-            <feComposite in="flood2" in2="off2a" operator="in" result="comp2" />
+$("#box4").on("click",function (){
+	$('#container div[id^=box]').css("animationName","run");
+	$('#container div[id^=project]').css("animationName","run4");
+	// $('#container div[id^=box]').css("display","none");
+	// $('#container div[id^=box]').fadeOut(1000);
+})
+$(".menu_set li:nth-child(1)").on("click",function (){
+	$('#container div[id^=box]').css("animationName","run2");
+	$('#container div[id^=project]').css("animationName","run3");
+	// $('#container div[id^=box]').css("display","block");
+	// $('#container div[id^=box]').fadeIn(1000);
+	$("#content").animate({left:0},200);
+	flag=0;
+})
+$(".menu_set li:nth-child(2)").on("click",function (){
+	$('#container div[id^=box]').css("animationName","run");
+	$('#container div[id^=project]').css("animationName","run4");
+	$("#content").animate({left:0},200);
+	flag=0;
+})
 
-            <feMerge x="0" width="100%" result="merge1">
-                <feMergeNode in = "black" />
-                <feMergeNode in = "comp1" />
-                <feMergeNode in = "off1b" />
 
-                <animate 
-                    attributeName="y" 
-                    id = "y"
-                    dur ="4s"
-                    
-                    values = '104px; 104px; 30px; 105px; 30px; 2px; 2px; 50px; 40px; 105px; 105px; 20px; 6ßpx; 40px; 104px; 40px; 70px; 10px; 30px; 104px; 102px'
 
-                    keyTimes = '0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1'
+var flag = 0;
+$(".nav-button").on("click",function (){
+	if (flag==0) {
+		$("#content").animate({left:200},200);
+		// $('#box4').off('click','#container div[id^=box]');
+		flag=1;
+	}else{
+		$("#content").animate({left:0},200);
+		flag=0;
+	};
+})
 
-                    repeatCount = "indefinite" />
- 
-                <animate attributeName="height" 
-                    id = "h" 
-                    dur ="4s"
-                    
-                    values = '10px; 0px; 10px; 30px; 50px; 0px; 10px; 0px; 0px; 0px; 10px; 50px; 40px; 0px; 0px; 0px; 40px; 30px; 10px; 0px; 50px'
 
-                    keyTimes = '0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1'
 
-                    repeatCount = "indefinite" />
-            </feMerge>
-            
 
-            <feMerge x="0" width="100%" y="60px" height="65px" result="merge2">
-                <feMergeNode in = "black" />
-                <feMergeNode in = "comp2" />
-                <feMergeNode in = "off2b" />
 
-                <animate attributeName="y" 
-                    id = "y"
-                    dur ="4s"
-                    values = '103px; 104px; 69px; 53px; 42px; 104px; 78px; 89px; 96px; 100px; 67px; 50px; 96px; 66px; 88px; 42px; 13px; 100px; 100px; 104px;' 
 
-                    keyTimes = '0; 0.055; 0.100; 0.125; 0.159; 0.182; 0.202; 0.236; 0.268; 0.326; 0.357; 0.400; 0.408; 0.461; 0.493; 0.513; 0.548; 0.577; 0.613; 1'
 
-                    repeatCount = "indefinite" />
- 
-                <animate attributeName="height" 
-                    id = "h"
-                    dur = "4s"
-                    
-                    values = '0px; 0px; 0px; 16px; 16px; 12px; 12px; 0px; 0px; 5px; 10px; 22px; 33px; 11px; 0px; 0px; 10px'
 
-                    keyTimes = '0; 0.055; 0.100; 0.125; 0.159; 0.182; 0.202; 0.236; 0.268; 0.326; 0.357; 0.400; 0.408; 0.461; 0.493; 0.513;  1'
-                     
-                    repeatCount = "indefinite" />
-            </feMerge>
-            
-            <feMerge>
-                <feMergeNode in="SourceGraphic" />  
+// window.history.back()//返回到上一页面
 
-                <feMergeNode in="merge1" /> 
-            <feMergeNode in="merge2" />
 
-            </feMerge>
-        </filter>
 
-    </defs>
 
-<g>
-    <text x="0" y="100">Hello World啊数据库的好阿莎开始觉得还拉萨扩大 什灯笼裤阿斯顿卢卡斯的；了</text>
-</g>
-</svg>
+
+
+
+// 浏览器返回  执行
+$(document).ready(function(e) { 
+    var counter = 0;
+    if (window.history && window.history.pushState) {
+         $(window).on('popstate', function () {
+            // window.history.pushState('forward', null,'#');
+            // window.history.forward(1);
+          	// alert("不可回退");
+          	// $('#container div[id^=box]').css("display","block");
+          	$('#container div[id^=box]').css("animationName","run2");
+          	$('#container div[id^=project]').css("animationName","run3");
+          	// $('#container div[id^=box]').fadeIn(1000);
+        });
+      }
+      window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+      window.history.forward(1);
+});
+
+
+	// var app=angular.module('routing',['ngRoute']);
+	//   app.config(['$routeProvider',"$locationProvider",function ($routeProvider,$locationProvider) {
+	//     $locationProvider.hashPrefix('');
+	//     $routeProvider.when('/project',{
+	//         // template:"这个是首页"
+	//         templateUrl:"dier.html"
+	//       })
+	//   }])
+
+
+</script>
 </body>
 </html>
