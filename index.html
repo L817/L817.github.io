@@ -9,6 +9,15 @@
 	<link rel="stylesheet" href="./css/xiangyingshi.css">
 </head>
 <body load=a>
+	<div id="preloader">
+		<div id="status">
+			<div class="parent">
+				<div class="child">
+					<h2>loading</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="menu">
 		<!-- 菜单 -->
 		<ul class="menu_set">
@@ -42,29 +51,38 @@
 					<br>
 					<i>front-end engineer</i>
 					<br>
-					The beautiful page of fashion is 啊收急急啊是哦啊圣诞快乐就是阿德急 lifelong pursuit.士大夫十分士大夫大师傅
+					The beautiful page of fashion is my lifelong pursuit.
 				</h2>
 			</div>
-			<div id="box3">阿斯顿尽快了解</div>
+			<div id="box3">
+				<img src="./images/LJ.jpg" alt="">
+				<h4>L & J</h4>
+				<div class="jt">
+					<img src="./images/jt.png" alt="">
+				</div>
+			</div>
 			<div id="box4">
 				<a href="#Project"> </a>
 				<h3>Project</h3>
 			</div>
-			<div id="box5">阿列克斯的距离喀什觉得sjd </div>
+			<div id="box5"></div>
 			<div id="box6"></div>
 			<div id="box7"></div>
 			<div id="box8"></div>
-			<div id="project1"></div>
-			<div id="project2"></div>
+			<div id="project1">
+				<img src="./images/meng.jpg" alt="">
+			</div>
+			<div id="project2">
+				<img src="./images/meng_1.png" alt="">
+			</div>
+			<div id="project3">
+				<img src="./images/meng_2.png" alt="">
+			</div>
 		</div>
-		
 	</div>
 
 <script src="./js/jquery.js"></script>
 <script>
-
-
-
 $("#box4").on("click",function (){
 	$('#container div[id^=box]').css("animationName","run");
 	$('#container div[id^=project]').css("animationName","run4");
@@ -88,13 +106,17 @@ var flag = 0;
 $(".nav-button").on("click",function (){
 	if (flag==0) {
 		$("#content").animate({left:200},200);
-		// $('#box4').off('click','#container div[id^=box]');
 		flag=1;
 	}else{
 		$("#content").animate({left:0},200);
 		flag=0;
 	};
 })
+
+
+
+
+
 
 
 
@@ -127,12 +149,10 @@ jQuery(document).ready(function($) {
       }
     });
 
-    // window.history.pushState('forward', null, './#forward');
+    window.history.pushState('forward', null, './#forward');
   }
 
 });
-
-
 </script>
 </body>
 </html>
