@@ -16,6 +16,8 @@ html,body{height: 100%; font-size: 100px;overflow:hidden;overflow-y:auto;}
             top: 2rem;*/
             /*padding-top: 1rem;*/
             background-color: pink;
+            background:url(./bg.jpg) 0 0 no-repeat;
+            background-size:100% 10rem;
             /*border: 1px black solid;*/
             text-align: center;
         }
@@ -37,17 +39,40 @@ html,body{height: 100%; font-size: 100px;overflow:hidden;overflow-y:auto;}
         }
     </style>
     <script>
-        var lw = ['你是傻子吗', '你是傻逼吗', '你是护壁吗', '你绝对是爸的智障']
+        var lw = ['你是不是爱我的', '我是你的男神吗？', '是不是很好玩？','我是不是很幼稚？', '一定要嫁给我']
         var i = 0;
 
         function a() {
             var no = document.getElementById("no");
             no.style.left = Math.floor(Math.random() * 5.1) + "rem";
             no.style.top = Math.floor(Math.random() * 7.2) + "rem";
+            if (i == 0) {
+                alert('真的不爱我吗？');
+                alert('你这辈子没办法了');
+                alert('摆脱不掉了');
+                alert('不信你在点试试');
+
+            }
+            if (i == 1) {
+                alert('我是你男朋友啊！崇拜我一下好不好');
+                alert('竟然点了否，不给你机会，否跑');
+                alert('否不跑了，我就给你机会');
+            }
+            if (i == 3) {
+                alert('竟然不觉得我幼稚，你最好了');
+                b();
+            }else if (i == 4) {
+                alert('不知道你是抱着试一试的心态还是什么');
+                alert('反正我是要跟你一辈子的');
+                alert('不会让你在走丢的');
+            }
         }
 
         function b() {
+            var a = document.getElementById("a");
             var wenti = document.getElementById("wenti");
+            var shi = document.getElementById("shi");
+            var no = document.getElementById("no");
             i++
             console.log(lw.length, i)
 
@@ -56,13 +81,31 @@ html,body{height: 100%; font-size: 100px;overflow:hidden;overflow-y:auto;}
             } else {
                 wenti.innerHTML = lw[i]
             }
+            if (i == 3 ) {
+                
+            }
+            if (i == 4 ) {
+                alert('后面是更幼稚的，哈哈')
+                shi.innerHTML = '嗯'
+                no.innerHTML = '不要'
+            }
+            if (i == 5 ) {
+                alert('我爱你');
+                wenti.innerHTML = '余生请多指教'
+                a.removeChild(shi);
+                a.removeChild(no);
+                a.style.background = "url(./bg2.jpg) 0 0 no-repeat";
+                a.style.backgroundSize = '100% 10rem';
+
+
+            }
             // alert("终于承认了！哈哈")
         }
     </script>
 </head>
 <body>
 <div id="a" clas="a" style="color: red;">
-    <span id="wenti">你是一个傻子吗?</span><br/>
+    <span id="wenti">你是不是爱我的?</span><br/>
     <button onclick="b()" id="shi">是</button>
     <br/>
     <!-- <button onclick="a()" id="no">否</button> -->
