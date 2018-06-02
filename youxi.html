@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,minimum-scale=1.0,maximum-scale=2.0,initial-scale=1.0,user-scalable=no">
+    <style type="text/css">
+    *{margin:0; padding:0; list-style:none;}
+html,body{height: 100%; font-size: 100px;overflow:hidden;overflow-y:auto;}
+        #a {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          /*  left: 5rem;
+            top: 2rem;*/
+            /*padding-top: 1rem;*/
+            background-color: pink;
+            /*border: 1px black solid;*/
+            text-align: center;
+        }
+        #shi{
+            position: absolute;
+            left: 2rem;
+            top: 3rem;
+        }
+        #no {
+            position: absolute;
+            left: 4rem;
+            top: 3rem;
+        }
+        #wenti{
+            font-size: 0.4rem;
+        }
+        button{
+            padding:0.1rem;
+        }
+    </style>
+    <script>
+        var lw = ['你是傻子吗', '你是傻逼吗', '你是护壁吗', '你绝对是爸的智障']
+        var i = 0;
+
+        function a() {
+            var no = document.getElementById("no");
+            no.style.left = Math.floor(Math.random() * 5.1) + "rem";
+            no.style.top = Math.floor(Math.random() * 7.2) + "rem";
+        }
+
+        function b() {
+            var wenti = document.getElementById("wenti");
+            i++
+            console.log(lw.length, i)
+
+            if (lw.length <= i) {
+
+            } else {
+                wenti.innerHTML = lw[i]
+            }
+            // alert("终于承认了！哈哈")
+        }
+    </script>
+</head>
+<body>
+<div id="a" clas="a" style="color: red;">
+    <span id="wenti">你是一个傻子吗?</span><br/>
+    <button onclick="b()" id="shi">是</button>
+    <br/>
+    <!-- <button onclick="a()" id="no">否</button> -->
+    <button onmouseover="a()" id="no">否</button>
+</div>
+<script>
+    function resetsize() {
+        var html = document.getElementsByTagName('html')[0];
+        var Ww = document.documentElement.clientWidth;
+        html.style.fontSize = Ww / 640 * 100 + "px";
+    }
+
+    resetsize();
+    window.onresize = function () {
+        resetsize();
+    }
+
+</script>
+</body>
+</html>
+
+
